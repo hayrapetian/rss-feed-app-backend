@@ -53,15 +53,6 @@ export class NewsService {
 
           for (const i of result.rss.channel[0].item) {
             if (moment(i.pubDate[0]).diff(moment(news[0].pubDate)) > 0) {
-              // const users: UserEntity[] = await this.userRepository.findBy({
-              //   isOnline: true,
-              // });
-
-              // const keywords = users.map((user: UserEntity) => {
-              //   return this.keywordRepository.findBy({
-              //     userId: user.id,
-              //   });
-              // });
               const news: Partial<NewsEntity> = newsFormatter(i);
               await this.newsRepository.save(news);
             }
