@@ -1,4 +1,5 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
+
 import { ErrorMessageEnum } from '../enum';
 
 export const throwHttpException = (

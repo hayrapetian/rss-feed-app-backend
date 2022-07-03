@@ -5,11 +5,12 @@ import {
   WebSocketGateway,
 } from '@nestjs/websockets';
 import { Socket } from 'socket.io';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+
 import { JwtPayloadParameter } from '../../auth/models';
 import { JwtStrategy } from '../../auth/strategy';
-import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from '../entity';
-import { Repository } from 'typeorm';
 import { extractFromBase64 } from '../../../core/utils';
 
 @WebSocketGateway()

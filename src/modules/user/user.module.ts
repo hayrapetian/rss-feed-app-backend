@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { JwtService } from '@nestjs/jwt';
 
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { NewsEntity } from '../news/entity';
 import { KeywordEntity } from '../keyword/entity';
 import { UserGateway } from './gateway';
-import { JwtService } from '@nestjs/jwt';
 import { JwtStrategy } from '../auth/strategy';
 import { UserEntity } from './entity';
 

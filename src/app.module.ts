@@ -7,10 +7,10 @@ import { DataSource } from 'typeorm';
 //modules
 import { NewsModule } from './modules/news/news.module';
 import { UserModule } from './modules/user/user.module';
+import { KeywordModule } from './modules/keyword/keyword.module';
 import { AuthModule } from './modules/auth/auth.module';
 //orm config
 import { config } from '../ormconfig';
-import { KeywordModule } from './modules/keyword/keyword.module';
 
 const thirdPartyModules: (
   | DynamicModule
@@ -26,7 +26,13 @@ const thirdPartyModules: (
 ];
 
 @Module({
-  imports: [...thirdPartyModules, NewsModule, UserModule, AuthModule, KeywordModule],
+  imports: [
+    ...thirdPartyModules,
+    NewsModule,
+    UserModule,
+    AuthModule,
+    KeywordModule,
+  ],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}

@@ -1,5 +1,6 @@
-import { NewsEntity } from '../../modules/news/entity';
 import * as moment from 'moment';
+
+import { NewsEntity } from '../../modules/news/entity';
 
 export const newsFormatter = (news): Partial<NewsEntity> => ({
   title: news.title[0],
